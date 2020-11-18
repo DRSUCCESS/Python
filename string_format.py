@@ -106,63 +106,32 @@
 # print('outside the function the name is', my_name)
 
 
-# # ...DICTIONARIES
-# # ...SORTING
-# def belt_count(dictionary):
-#     belts = list(dictionary.values())
-#     for belt in set(belts):
-#         num = belts.count(belt)
-#         print(f'There are {num} {belt} belts')
+# ...DICTIONARIES
+# ...SORTING
+def belt_count(dictionary):
+    belts = list(dictionary.values())
+    for belt in set(belts):
+        num = belts.count(belt)
+        print(f'There are {num} {belt} belts')
 
-# # def ninja_intro(dictionary):
-# #     for key,val in dictionary.items():
-# #         print(f'I am {key} and a {val} belt')
+# def ninja_intro(dictionary):
+#     for key,val in dictionary.items():
+#         print(f'I am {key} and a {val} belt')
 
-# ninja_belts = {}
+ninja_belts = {}
 
-# while True:
-#     ninja_name = input('enter a ninja name:')
-#     ninja_belt = input('enter a belt colour:')
-#     ninja_belts[ninja_name] = ninja_belt
-
-
-#     another = input('add another? (y/n)')
-#     if another == 'y':
-#         continue #continue to the top of the loop
-#     else:
-#         break
-
-# # ninja_intro(ninja_belts)
-# belt_count(ninja_belts)
+while True:
+    ninja_name = input('enter a ninja name:')
+    ninja_belt = input('enter a belt colour:')
+    ninja_belts[ninja_name] = ninja_belt
 
 
+    another = input('add another? (y/n)')
+    if another == 'y':
+        continue #continue to the top of the loop
+    else:
+        break
 
-# CLASSES
-class Planet:
+# ninja_intro(ninja_belts)
+belt_count(ninja_belts)
 
-    shape = 'round' # class att
-
-    # instance att
-    def __init__(self, name, radius, gravity, system): # create new obj of class
-        self.name = name
-        self.radius =  radius
-        self.gravity = gravity
-        self.system = system
-
-    def orbit(self): # instance mtd for individual class
-        return f'{self.name} is orbiting in the {self.system}'
-    
-    @classmethod
-    def commons(cls): # mtd for general class
-        return f'All planets are {cls.shape} because of gravity'
-
-    @staticmethod # only have access to individual par
-    def spin(speed = '2000 miles per hour'):
-        return f'The planet spins and spins at {speed}'
-
-
-naboo = Planet('Naboo', 30000, 8, 'Naboo System')  # create new instance of the same class
-# print(f'Name:{naboo.name}')
-# print(naboo.orbit())
-
-print(Planet.spin('a very high speed'))
